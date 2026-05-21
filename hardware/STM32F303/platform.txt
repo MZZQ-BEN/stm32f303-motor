@@ -1,0 +1,29 @@
+# Minimal platform.txt (template) for STM32F303 package
+# This is a template to provide Arduino IDE with build/upload recipes for the board.
+# IMPORTANT: This package is a wrapper that expects the stm32duino core and upload tools to be
+# installed (https://github.com/stm32duino/Arduino_Core_STM32). Adjust upload tool names to match
+# the tools provided by your core (eg. stlink, openocd, dfu-util).
+
+name=STM32F303 Minimal Platform
+version=1.0.0
+
+# Upload tool and protocol (placeholder values; adapt to your toolchain)
+upload.tool=stlink
+upload.protocol=stlink
+
+# Compiler settings are provided by the installed core. The recipes below are minimal placeholders
+# and typically will be overridden by your installed core's platform.txt. They are included so the
+# Arduino IDE recognizes the package and can present upload options.
+
+# Upload recipe - replace "stlink-flash" with your concrete upload command/tool provided by the core
+recipe.upload.pattern={path}/tools/stlink/bin/stlink-flash {build.path}/{archive_file}
+
+# Fallback simple build/compile recipes (no-op; core should provide real recipes)
+recipe.c.combine.pattern={compiler.path}{compiler.c.cmd} -c {compiler.c.flags} -o {build.path}/{source_file}
+
+# Notes:
+# - After installing this hardware folder into <Arduino sketchbook>/hardware/, install the stm32duino
+#   core (Arduino_Core_STM32) via Boards Manager or git clone into the hardware folder as documented
+#   by stm32duino. Then adapt recipe.upload.pattern to call the upload tool the core provides.
+# - Common upload tools for STM32 boards: stlink, dfu-util, bossac, openocd. Use the one matching your
+#   programmer and the installed core.

@@ -1,0 +1,14 @@
+# Minimal programmers.txt for STM32F303 (template)
+# Define common external programmer entries. The actual upload tool must be installed separately.
+
+stlink.name=ST-Link
+stlink.protocol=stlink
+stlink.communication=serial
+
+openocd.name=OpenOCD
+openocd.protocol=openocd
+openocd.communication=serial
+
+dfu.name=DFU
+dfu.protocol=dfu
+dfu.communication=usb
