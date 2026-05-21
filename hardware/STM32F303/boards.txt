@@ -1,0 +1,15 @@
+# Minimal boards.txt template for STM32F303CCT6
+# This is a template. Replace fields with values matching your core and upload tools.
+
+genericSTM32F303CCT6.name=STM32F303CCT6 (Generic)
+genericSTM32F303CCT6.upload.protocol=stlink
+genericSTM32F303CCT6.upload.maximum_size=262144
+genericSTM32F303CCT6.upload.maximum_data_size=65536
+genericSTM32F303CCT6.build.mcu=cortex-m4
+genericSTM32F303CCT6.build.f_cpu=72000000L
+genericSTM32F303CCT6.build.variant=genericSTM32F303CCT6
+genericSTM32F303CCT6.build.board=STM32F303CCT6
+
+# Notes:
+# - For full Arduino IDE support, install stm32duino (Arduino core for STM32) and merge/adjust this file accordingly.
+# - This template does not replace the official core; it helps identify the board name and variant.
